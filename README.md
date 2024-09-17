@@ -1,21 +1,20 @@
-# MathGPT-OpenModelChallenge
+# MathGPT-OpenSource
 
-**MathGPT-OpenModelChallenge** is an open-source platform where AI enthusiasts and researchers can test and compete by developing AI models that solve mathematical problems. The goal is to create the best-performing models based on criteria such as accuracy, speed, and efficiency.
+**MathGPT-OpenSource is an open-source platform where AI enthusiasts and researchers can develop and test AI models that solve mathematical problems. The goal is to create highly efficient, accurate, and fast models to tackle various mathematical challenges.
 
 ## 🚀 Project Overview
 
-MathGPT is a platform designed to evaluate AI models that can solve mathematical problems. Participants can submit their models, and our platform will evaluate their performance on a variety of standardized math problem datasets. The results are displayed on a leaderboard, allowing participants to see where they stand against others.
+MathGPT is designed to evaluate AI models for solving mathematical problems. Users can submit their models, and our platform will evaluate their performance based on standardized math problem datasets. This collaborative project aims to continuously improve model performance through contributions from the open-source community.
 
-The best-performing models will be recognized based on their efficiency, accuracy, and speed.
 
 ---
 
 ## 🌟 Key Features
-- **Open Competition**: Compete with others to develop the best-performing AI model.
-- **Real-Time Leaderboard**: Track your model's performance in real time and see how it ranks against others.
-- **Live Testing**: Upload your model to our platform and test it against a variety of mathematical problems.
-- **Standardized Datasets**: All models are evaluated on a uniform set of problems to ensure fairness.
-- **Secure Model Execution**: Models are tested in a sandbox environment to prevent any malicious activity.
+- **Collaborative Development: Contribute to building the most effective AI models for solving math problems.
+- **Live Testing: Upload your model to the platform and test it against a variety of mathematical problems in real-time.
+- **Standardized Datasets: Models are evaluated on a consistent set of problems to ensure fair comparisons.
+- **Model Improvement: Explore and improve upon existing models contributed by others, or share your own innovative approaches.
+- **Secure Model Execution: Models are tested in a sandbox environment to ensure safety and integrity.
 
 ---
 
@@ -25,7 +24,7 @@ The best-performing models will be recognized based on their efficiency, accurac
 1. Fork this repository to your GitHub account.
 2. Clone the repository to your local machine:
    ```bash
-   git clone https://github.com/<your-username>/MathGPT-OpenModelChallenge.git
+   git clone https://github.com/<your-username>/MathGPT-OpenSouce.git
 
 ## Step 2: Build Your Model
 
@@ -39,9 +38,6 @@ The best-performing models will be recognized based on their efficiency, accurac
 - Create a pull request (PR) to submit your model for testing.
 - Make sure to include a `README.md` in your submission describing your approach, any unique features of your model, and how to run it.
 
-## Step 4: Get Tested and Ranked
-
-Once your model is submitted, it will automatically be tested using our backend system. Your model will be ranked on our real-time leaderboard based on its performance metrics.
 
 ## 🔍 Model Submission Guide
 
@@ -68,9 +64,6 @@ Your model will be evaluated based on the following metrics:
 - **Speed**: The time taken to solve the problem.
 - **Efficiency**: The amount of computational resources (CPU, memory) used by the model.
 
-## 🏆 Leaderboard and Prizes
-
-The leaderboard will rank models based on their cumulative performance across all test cases. The model with the highest rank at the end of the competition will receive special recognition and may also receive rewards (depending on sponsorships).
 
 ## 💻 Local Setup for Testing
 
