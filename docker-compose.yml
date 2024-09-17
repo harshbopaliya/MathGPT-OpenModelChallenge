@@ -1,0 +1,60 @@
+version: "3.8"
+
+services:
+  backend:
+    build: ./backend
+    container_name: mathgpt-backend
+    ports:
+      - "5000:5000"
+    environment:
+      - DB_HOST=db
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - db
+
+  frontend:
+    build: ./mathgpt-ui
+    container_name: mathgpt-frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./mathgpt-ui:/usr/src/app
+    stdin_open: true
+    tty: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true # Necessary for hot-reloading on some systems
+
+  db:
+    image: postgres:13
+    container_name: mathgpt-db
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: mathgpt-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    volumes:
+      - ./pgadmin_data:/var/lib/pgadmin
+
+volumes:
+  pgdata:
+  pgadmin_data:
+
+networks:
+  mathgpt-network:
+    driver: bridge

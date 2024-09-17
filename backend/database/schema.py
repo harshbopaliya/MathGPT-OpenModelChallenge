@@ -1,12 +1,13 @@
-# db_setup.py
 import psycopg2
 import os
 from dotenv import load_dotenv
+import json
 
 # Load environment variables from .env file
 load_dotenv()
 
 def create_db_connection():
+    """Establish a connection to the PostgreSQL database."""
     try:
         conn = psycopg2.connect(
             host=os.getenv("DB_HOST"),
@@ -20,6 +21,7 @@ def create_db_connection():
         return None
 
 def create_tables():
+    """Create tables for models and performance tracking in the database."""
     conn = create_db_connection()
     if conn:
         with conn.cursor() as cur:
@@ -51,17 +53,17 @@ def create_tables():
     else:
         print("Failed to create tables")
 
-def save_model(filename, model_file_path):
+def save_model(filename, model):
+    """Save a model to the database."""
     conn = create_db_connection()
     if conn:
-        with open(model_file_path, 'rb') as f:
-            model_binary = f.read()
-
         with conn.cursor() as cur:
-            # Insert model data
+            # Convert the model to a binary format to store in the database
+            model_binary = psycopg2.Binary(model)
+            
             cur.execute("""
             INSERT INTO models (filename, model) VALUES (%s, %s) RETURNING id;
-            """, (filename, psycopg2.Binary(model_binary)))
+            """, (filename, model_binary))
             model_id = cur.fetchone()[0]
             conn.commit()
             print(f"Model saved with ID: {model_id}")
@@ -72,6 +74,7 @@ def save_model(filename, model_file_path):
         return None
 
 def save_performance(model_id, problem, solution, prediction, accuracy):
+    """Save performance metrics for a model to the database."""
     conn = create_db_connection()
     if conn:
         with conn.cursor() as cur:
