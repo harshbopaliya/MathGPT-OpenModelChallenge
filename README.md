@@ -10,11 +10,11 @@ MathGPT is designed to evaluate AI models for solving mathematical problems. Use
 ---
 
 ## 🌟 Key Features
-- **Collaborative Development: Contribute to building the most effective AI models for solving math problems.
-- **Live Testing: Upload your model to the platform and test it against a variety of mathematical problems in real-time.
-- **Standardized Datasets: Models are evaluated on a consistent set of problems to ensure fair comparisons.
-- **Model Improvement: Explore and improve upon existing models contributed by others, or share your own innovative approaches.
-- **Secure Model Execution: Models are tested in a sandbox environment to ensure safety and integrity.
+- **Collaborative Development**: Contribute to building the most effective AI models for solving math problems.
+- **Live Testing**: Upload your model to the platform and test it against a variety of mathematical problems in real-time.
+- **Standardized Datasets**: Models are evaluated on a consistent set of problems to ensure fair comparisons.
+- **Model Improvement**: Explore and improve upon existing models contributed by others, or share your own innovative approaches.
+- **Secure Model Execution**: Models are tested in a sandbox environment to ensure safety and integrity.
 
 ---
 
