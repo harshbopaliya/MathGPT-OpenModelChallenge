@@ -1,47 +1,47 @@
 # 📄 Model Submission Details
 
-- Welcome to the **MathGPT-OpenModelChallenge**! Below are the guidelines for submitting your models to the platform. Please ensure that you follow these instructions carefully to avoid submission errors and ensure compatibility with our system.
+Welcome to the **MathGPT-OpenModelChallenge**! Below are the guidelines for submitting your models to the platform. Please ensure that you follow these instructions carefully to avoid submission errors and ensure compatibility with our system.
 
 ---
 
 ## 🎯 Model Submission Guidelines
 
-- Your model should adhere to the following structure for input/output to ensure it can be evaluated correctly by the platform.
+Your model should adhere to the following structure for input/output to ensure it can be evaluated correctly by the platform.
 
 ### 1. **Input Format**
-- The input to the model will be a JSON object representing the mathematical problem. Example:
+ The input to the model will be a JSON object representing the mathematical problem. Example:
 
 ```json
 {
   "problem": "integrate x^2 dx"
 }
 ```
-- problem: A string representing the mathematical problem. This could be an algebraic equation, calculus problem, or other types of mathematical queries.
+problem: A string representing the mathematical problem. This could be an algebraic equation, calculus problem, or other types of mathematical queries.
 
 ### 2. **Output Format**
-- The model must return a JSON object containing the solution to the problem. Example:
+The model must return a JSON object containing the solution to the problem. Example:
 
 ```json
 {
   "solution": "x^3 / 3 + C"
 }
 ```
-- solution: A string representing the solution to the mathematical problem.
+solution: A string representing the solution to the mathematical problem.
 
 
 ### 3. **Error Handling**
-- If the model encounters an invalid input or cannot solve the problem, it should return an error response in the following format:
+If the model encounters an invalid input or cannot solve the problem, it should return an error response in the following format:
 
 ```json
 {
   "error": "Invalid input or unsolvable problem"
 }
 ```
-- error: A string describing the nature of the issue.
+ error: A string describing the nature of the issue.
 
 
 #### 4. **Model Interface**
-- Your model should include a single function (e.g., solve_problem) that takes the input JSON and returns the output JSON.
+Your model should include a single function (e.g., solve_problem) that takes the input JSON and returns the output JSON.
 
 ```python
 def solve_problem(problem_json):
@@ -56,27 +56,32 @@ def solve_problem(problem_json):
 ```
 
 ## 🚀 Steps for Model Submission
-1. Step 1: Fork the Repository
-Fork the MathGPT-OpenModelChallenge repository on GitHub.
-Clone your forked repository to your local machine:
+Step 1: Fork the Repository
 
+- Fork the MathGPT-OpenModelChallenge repository on GitHub.
+
+- Clone your forked repository to your local machine:
 ``` bash
 git clone https://github.com/<your-username>/MathGPT-OpenModelChallenge.git
 ```
 
-2. Step 2: Develop Your Model
+Step 2: Develop Your Model
+
 - Implement your model following the structure and input/output format described above.
-Your model should be able to read the JSON input, process the mathematical problem, and return the correct solution in JSON format.
+
+- Your model should be able to read the JSON input, process the mathematical problem, and return the correct solution in JSON format.
 
 - Test your model locally using the provided test dataset (/data/sample_problems.json).
 
-3. Step 3: Create a README.md for Your Model
+Step 3: Create a README.md for Your Model
+
 - Your submission should include a README.md file that explains:
 - Your approach and methodology.
 - Any specific frameworks, libraries, or tools you used.
 - Instructions on how to run the model locally (dependencies, environment setup, etc.).
 
-4. Step 4: Submit a Pull Request (PR)
+Step 4: Submit a Pull Request (PR)
+
 - Once you are satisfied with your model, commit your code to your forked repository.
 - Create a Pull Request (PR) to the main repository.
 - The PR should include:
@@ -84,12 +89,12 @@ Your model should be able to read the JSON input, process the mathematical probl
 - The README.md with details about your model.
 - Any other supporting files needed to run your model.
 
-5. Step 5: Automatic Testing
-Once your PR is submitted, the platform will automatically:
+Step 5: Automatic Testing
 
-Run your model against a set of mathematical problems.
-Rank it based on its accuracy, speed, and efficiency.
-You can check the results on the Leaderboard.
+- Once your PR is submitted, the platform will automatically:
+- Run your model against a set of mathematical problems.
+- Rank it based on its accuracy, speed, and efficiency.
+
 
 ## 📦 Directory Structure for Submission
 Your submitted model should follow the directory structure below:
